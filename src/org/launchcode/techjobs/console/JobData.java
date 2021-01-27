@@ -76,15 +76,16 @@ public class JobData {
         for (HashMap<String, String> row : allJobs) {
 
             String aValue = row.get(column);
+            String upperCaseValue = aValue.toUpperCase();
 
-            if (aValue.contains(value)) {
+            if (upperCaseValue.contains(value.toUpperCase())) {
                 jobs.add(row);
             }
         }
 
         return jobs;
     }
-
+    //Takes search term as argument
     public static ArrayList<HashMap<String, String>> findByValue (String value) {
 
         // load data, if not already loaded
@@ -96,16 +97,12 @@ public class JobData {
 
         for (HashMap<String, String> row : allJobs) {
             //System.out.println("Row :- " + row);
-            Boolean matched = false;
             for (String column : row.keySet()) {
                 String aValue = row.get(column);
                 String upperCaseValue = aValue.toUpperCase();
                 if (upperCaseValue.contains(value.toUpperCase())) {
-                    matched = true;
+                    jobs.add(row);
                 }
-            }
-            if (matched) {
-                jobs.add(row);
             }
         }
 

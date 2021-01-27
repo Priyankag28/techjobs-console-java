@@ -62,7 +62,7 @@ public class TechJobs {
                 String searchTerm = in.nextLine();
 
                 if (searchField.equals("all")) {
-                    System.out.println("Search all fields not yet implemented.");
+                   // System.out.println("Search all fields not yet implemented.");
                     printJobs(JobData.findByValue(searchTerm));
 
                 } else {
@@ -126,6 +126,7 @@ public class TechJobs {
                 for (String j : jobData.keySet()) {
                     System.out.println(j + " : " + jobData.get(j));
                 }
+                System.out.println("*****");
             }
         }
     }
